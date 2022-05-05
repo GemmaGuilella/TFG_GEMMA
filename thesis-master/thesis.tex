@@ -1,0 +1,98 @@
+\input{configuration}
+
+\begin{document}
+\pagestyle{plain}
+
+% Cover
+\input{cover}
+
+\frontmatter
+
+% Dedication
+% \newpage
+% \hspace{0pt}
+% \vfill
+% \thispagestyle{empty}
+% \dictum[William Gibson, \textit{Zero History}]{
+%     ``When you want to know how things really work, study them when they’re coming apart.''}
+% \vfill
+% \input{dedication}
+% \hspace{0pt}
+% \afterpage{\null\thispagestyle{empty}\newpage}
+
+% Acknowledgements
+\newpage
+\hspace{0pt}
+\vfill
+\thispagestyle{empty}
+\input{acknowledgements}
+\vfill
+\hspace{0pt}
+\afterpage{\null\thispagestyle{empty}\newpage}
+
+% Abstract
+\newpage
+\hspace{0pt}
+\vfill
+\setcounter{page}{1}
+\input{abstract}
+\vfill
+\hspace{0pt}
+\afterpage{\null\thispagestyle{empty}\newpage}
+
+\tableofcontents
+\listoffigures
+\listoftables
+% \listoflistings
+
+\mainmatter
+
+\clearpage
+% \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
+% \renewcommand{\sectionmark}[1]{\markright{\ #1}{}}
+\fancyhead[L]{\scriptsize{\textsl{\leftmark}}}
+\fancyhead[R]{\scriptsize{\textsl{\rightmark}}}
+
+\part{Memòria}
+
+% Capitols memòria
+\chapter{Introducció}
+\input{chapters/Introduccio}
+
+\chapter{Arquitectura del sistema}
+\input{chapters/arquitecturasistema}
+
+\chapter{Back-end}
+\input{chapters/Laravel}
+
+\chapter{Front-end}
+\input{chapters/frontend.tex}
+
+\chapter{Raspberry Pi}
+\input{chapters/raspberryPi}
+
+\chapter{Connexions de hardware}
+\input{chapters/connexionsDispositius}
+
+\chapter{Desglossament econòmic de la demo}
+\input{chapters/Pressupost}
+
+\chapter{Conclusions}
+\input{chapters/conclusions.tex}
+
+\chapter{Bibliografia}
+\printbibliography[heading=none]
+
+% % Capitols appendix
+\part{Annexos}
+
+\appendix
+
+\chapter{Images del front-end de l'aplicació}
+\input{chapters/imatgesFront.tex}
+
+\chapter{Enllaços a vídeos de l'aplicació}
+\input{chapters/videosApp.tex}
+
+
+\end{document}

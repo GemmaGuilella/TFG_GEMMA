@@ -15,7 +15,7 @@ class Cars extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
-            $table->string('matricula', 8)->unique();
+            $table->string('matricula', 7)->unique();
             $table->foreignId('user_id')
                 ->constrained()
                 ->onDelete('cascade');

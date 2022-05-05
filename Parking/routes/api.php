@@ -3,11 +3,10 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BarrierController;
 use App\Http\Controllers\CarController;
-use App\Http\Controllers\DecoderQR;
 use App\Http\Controllers\GenerateQR;
-use App\Http\Controllers\SpaceController;
-use App\Models\Barrier;
-use Illuminate\Http\Request;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\ShowLogs;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,10 +27,15 @@ Route::prefix('auth')->as('auth.')->group(function () {
     Route::put('/user', [AuthController::class, 'saveUser'])->name('user.edit');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
-Route::get('/car/{car}/qr', GenerateQR::class);
+Route::get('/cars/{car}/qr', GenerateQR::class);
 Route::apiResource('cars', CarController::class);
-Route::apiResource('barriers', BarrierController::class)->only('update');
+Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
+Route::get('logs', ShowLogs::class)->name('logs.index');
+Route::put('settings', [SettingsController::class, 'update'])->name('settings.update');
 Route::post('barriers/open', [BarrierController::class, 'open'])->name('barriers.open');
-// Route::post('/car/{qr}', DecoderQR::class);
-// Route::put('/spaces/{space}/associate/{car}', [SpaceController::class, 'associate'])->name('space.associate');
-// Route::put('/spaces/{space}/dissociate', [SpaceController::class, 'disassociate'])->name('space.disassociate');
+
+Route::as('checkout.')->prefix('/checkout')->group(function () {
+    Route::post('/{car}', [PaymentController::class, 'pay'])->name('pay');
+    Route::get('/success', [PaymentController::class, 'success'])->name('success');
+    Route::get('/error', [PaymentController::class, 'error'])->name('error');
+});

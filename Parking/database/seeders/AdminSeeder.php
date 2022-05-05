@@ -18,7 +18,7 @@ class AdminSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@admin.com',
             'dni' => '39393939A',
-            'phone' => '625331308',
+            'phone' => '+34625666666',
             'password' => 'Password123!',
             'admin' => true,
         ]);

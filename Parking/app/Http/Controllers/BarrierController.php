@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\LogState;
 use Illuminate\Http\Request;
 use App\Http\Requests\Barriers\UpdateRequest;
 use App\Http\Resources\BarrierResource;
@@ -9,6 +10,8 @@ use App\Models\Barrier;
 use App\Models\Car;
 use App\Models\Space;
 use Illuminate\Support\Facades\Crypt;
+use Pusher\Pusher;
+use App\Models\Settings;
 
 class BarrierController extends Controller
 {
@@ -21,17 +24,22 @@ class BarrierController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function open(Request $request, Barrier $barrier)
+    public function open(UpdateRequest $request)
     {
         // Desencriptar codi QR
         $qr = json_decode(Crypt::decryptString($request->qr));
-        // dd($carID);
-        // Quin cotxe es, no crec que faci falta
+
         $car = Car::findOrFail($qr->id);
 
-        if ($car->token !== $qr->token && (now()->diffInMinutes($qr->token_created_at) > 5)) {
+        if ($car->token !== $qr->token) {
             abort(406, 'Token invalid');
         }
+
+        if (now()->diffInMinutes($qr->token_created_at) > Settings::first()->token_expiration) {
+            $car->update(['token' => null]);
+            abort(406, 'Token expired');
+        }
+
         $car->update(['token' => null]);
         // $space == null ? dd('No està a dins -> ENTRANT') : dd('Està a dins -> SORTINT');
         // Mirem si la plaça és buida (null)
@@ -50,6 +58,15 @@ class BarrierController extends Controller
             // Amb la id del cotxe tinc el token de la BD la comparo amb el token que m'ha arribat
             // si es aixi obro barreres
             // return ["Plaça adjudicada a:", $space->id]; // fer proves DELETE
+            $pusher = new Pusher(env('PUSHER_APP_KEY'), env('PUSHER_APP_SECRET'), env('PUSHER_APP_ID'), ['cluster' => env('PUSHER_APP_CLUSTER')]);
+            $pusher->trigger('my-channel', 'my-event', ['car_id' => $car->id, 'user_id' => $car->user->id]);
+
+            $car->logs()->create([
+                'state' => LogState::Enter,
+                'price' => null,
+                'payment_id' => null,
+            ]);
+
             return response()->noContent();
             // un no content es un 204 (ha anat be) per tant LED VERD (aixo python)
         }
@@ -58,22 +75,12 @@ class BarrierController extends Controller
         $space = $car->space;
         $space->car()->disassociate($car);
         $space->save();
+        $car->logs()->create([
+            'state' => LogState::Exit,
+            'price' => null,
+            'payment_id' => null,
+        ]);
         // return ["Sortint", $space];
         return response()->noContent();
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param UpdateRequest $request
-     * @param Barrier $barrier
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateRequest $request, Barrier $barrier)
-    {
-        return new BarrierResource(
-            tap($barrier)
-                ->update($request->validated()),
-        );
     }
 }

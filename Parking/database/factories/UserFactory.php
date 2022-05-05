@@ -30,6 +30,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'dni' => Str::random(9),
             'phone' => $this->faker->unique()->e164PhoneNumber(),
+            'admin' => $this->faker->boolean()
 
         ];
     }
@@ -44,6 +45,20 @@ class UserFactory extends Factory
         return $this->state(function (array $attributes) {
             return [
                 'email_verified_at' => null,
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the model's email address should be unverified.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function admin(bool $value = true)
+    {
+        return $this->state(function (array $attributes) use ($value) {
+            return [
+                'admin' => $value,
             ];
         });
     }

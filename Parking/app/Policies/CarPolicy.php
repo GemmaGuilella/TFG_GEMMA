@@ -79,4 +79,16 @@ class CarPolicy
     {
         return $car->user()->is($user);
     }
+
+    /**
+     * Determines if the car can checkout a payment.
+     *
+     * @param User $user
+     * @param Car $car
+     * @return bool
+     */
+    public function checkout(User $user, Car $car): bool
+    {
+        return $car->isParked();
+    }
 }

@@ -27,7 +27,7 @@ class CarFactory extends Factory
         $faker->addProvider(new \Faker\Provider\Fakecar($faker));
         return [
             'user_id' => User::factory(),
-            'matricula' => $faker->vehicleRegistration('[0-9]{4} [A-Z]{3}'),
+            'matricula' => $faker->vehicleRegistration('[0-9]{4}[A-Z]{3}'),
         ];
     }
 }

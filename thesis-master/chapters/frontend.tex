@@ -1,0 +1,171 @@
+La implementació del \emph{front-end} de l'aplicació, és a dir
+la part que l'usuari interactua amb ella s'ha usat la \emph{framework} de \emph{NextJS}
+\autocite{nextjs} basada en React.
+
+\section{Elecció de l'entorn}
+
+\emph{React}, és una llibreria de codi obert de JavaScript amb l'objectiu de desenvolupar interfícies d'usuari.
+ReactJS permet als desenvolupadors crear aplicacions que fan servir dades que poden canviar
+amb el temps sense la necessitat de recarregar la pàgina \autocite{react}. Les seves grans característiques
+són la rapidesa, simplicitat i l'escalabilitat. Aquests objectius s'aconsegueixen gràcies a:
+
+\begin{itemize}
+    \item \emph{DOM Virtual} \emph{Document Object Model}: és el que permet renderitzar només
+    els elements gràfics que han estat modificats, això aporta una gran velocitat. És
+    útil quan es té moltes dades i hi ha petites modificacions.
+    \item \emph{JSX}: és una extensió del llenguatge de programació JavaScript optimitzat
+    en velocitat i captura errors en temps de compilació. L'usuari té la possibilitat
+    d'utilitzar-la perquè ajuda al desenvolupador, ja que té una sintaxi semblant a la de
+    l'HTML, això implica que fa el codi més llegible i escriure'l és una experiència
+    similar a l'HTML, el fa més fàcil.
+    \item Les propietats conegudes com les \emph{props}, són els atributs de configuració
+    d'un component.
+\end{itemize}
+
+
+Existeixen algunes \emph{frameworks} que utilitzen la llibreria de \emph{React}, com per exemple,
+\emph{NextJS} utilitza tot el que dóna la llibreria de \emph{React}. A més, dóna un sistema
+de rutes amb la separació de codi per ruta. Permet en la utilització d'eines que ajuden al
+desenvolupador. Algunes d'elles utilitzades són:
+
+\begin{itemize}
+    \item \emph{Router}, per l'encaminament i la navegació.
+    \item \emph{Link}, un component que permet que l'aplicació enllaci pàgines i carregui les
+    seves dades.
+\end{itemize}
+
+\section{Pàgines}
+En els annexos s'hi pot trobar un recull de fotografies per mostrar com és la part de \emph{front-end}.
+Pel disseny de l'aplicació s'utilitza la \emph{framework} de CSS \texttt{Tailwind}. Usant
+aquesta eines permet al desenvolupador evitar escriure arxius CSS \autocite{tailwind}.
+
+\subsection{Iniciar Sessió}
+En aquesta vista permet a l'usuari iniciar sessió posant el seu correu electrònic i la contrasenya
+en els \emph{inputs} que es veuen a la imatge \autoref{fig:login_photo}. Seguidament, l'usuari ha de prémer el botó d'\texttt{Iniciar sessió}. Si l'usuari no està registrat en aquesta aplicació, ho pot fer prement el botó de \emph{Crear un nou compte} que està sota del primer botó.
+
+\subsection{Registrar usuari}
+Aquesta vista mostra uns \emph{inputs} per incloure les dades de l'usuari per
+poder-se registrar a l'aplicació. Aquests són el nom, el DNI, el telèfon mòbil, el correu electrònic, la contrasenya
+i la confirmació de la contrasenya. Una vegada inscrites aquestes dades s'ha de prémer el botó de \emph{Registrar-se},
+si es vol tirar enrere i anar a la pàgina d'iniciar sessió es pot clicar el botó de \emph{Ja tinc compte} o prémer el \emph{logo} de
+la \emph{navbar}. La imatge relacionada aquesta vista es pot trobar a \autoref{fig:register_photo}.
+
+\subsection{Principal}
+La imatge que mostra un exemple d'aquesta vista està a \autoref{fig:index_photo}. En la fotografia es pot veure tres seccions.
+
+La primera és que dóna la benvinguda a l'usuari i hi ha un botó que únicament es pot clicar quan està disponible.
+La disponibilitat varia segons si l'usuari és administrador. La imatge corresponent a la part d'administradors
+està a \autoref{fig:admin_photo}.
+
+La segona, hi ha una \emph{card} on hi ha la informació de l'usuari, a la part superior a la dreta
+hi ha una icona d'un llapis. Aquest llapis és un botó per editar aquesta informació. Quan l'usuari
+el clica, l'aplicació redirigeix a l'usuari a una pantalla per editar-la. La pantalla d'editar està a
+\autoref{fig:edit_user_photo}.
+
+Finalment, es troba la tercera secció on també hi ha una \emph{card} on hi ha la informació dels vehicles
+registrats de l'usuari. A la part superior d'aquesta \emph{card} hi ha un botó amb un \texttt{+},
+si el client clica aquest botó, l'aplicació el redirigeix a una pantalla
+per afegir vehicles, una imatge d'aquesta vista està a \autoref{fig:add_car_photo}.
+
+Quan hi ha vehicles guardats es mostra el número de matrícula i tres botons. Aquests botons tenen tres
+accions diferents, el primer canvia depenent d'on està el cotxe. Si el cotxe no està dins del pàrquing,
+el botó és un codi QR, ja que per entrar al pàrquing s'ha de clicar. Es pot veure aquesta pantalla a
+\autoref{fig:codiQR_photo}. En canvi, si el cotxe està dins del pàrquing la vista mostra una \texttt{P}
+de pàrquing, on hi ha la informació relacionada d'aquest aparcament.
+Un exemple d'aquesta pantalla és \autoref{fig:information_photo}.
+El segon botó és un llapis, s'utilitza per editar el número de la matrícula.
+
+La vista que controla aquesta funcionalitat és a \autoref{fig:edit_car_photo}. Per acabar, hi ha un botó
+d'una brossa de color vermell. Aquest botó és per eliminar el vehicle.
+Els botons d'editar i eliminar es deshabiliten quan el vehicle està estacionat dins del pàrquing.
+
+\subsubsection{Vista per editar l'usuari}
+En aquesta vista l'usuari pot modificar les dades del seu compte com el nom, la contrasenya, el telèfon i el DNI.
+Es troben dos botons al final de la \emph{card} on el primer és per tirar enrere cap a la pantalla d'índex
+\autoref{fig:index_photo}, també es pot anar a la pantalla principal clicant el \emph{logo} de la \emph{navbar}.
+El segon botó és per guardar les noves dades a la base de dades. La imatge relacionada a aquesta vista és \autoref{fig:edit_user_photo}.
+
+\subsubsection{Vista per editar els cotxes de l'usuari}
+La imatge que mostra aquesta pantalla és \autoref{fig:edit_car_photo}. Es veu una \emph{card} on només hi ha un \emph{input}
+per modificar el número de la matrícula.
+El format pel número de la matrícula és \emph{xxxxXXX}, on els quatre primers caràcters són números del 0-9
+i els tres caràcters del final són lletres de l'A-Z. La matrícula és única per cada usuari, és a dir, no es pot repetir.
+
+\subsubsection{Vista per afegir els cotxes de l'usuari}
+Aquesta vista és molt similar a l'anterior, ja que únicament canvia el títol i l'acció resultant,
+és a dir afegir un cotxe a la base de dades amb l'usuari que ha iniciat sessió.
+La següent imatge mostra aquesta vista \autoref{fig:add_car_photo}.
+
+\subsection{Codi QR}
+Quan l'usuari es troba a la pàgina principal i vol accedir amb un vehicle al pàrquing, clica el botó del codi QR que pertany en aquest vehicle.
+Aquest botó redirigeix a aquesta pantalla \autoref{fig:codiQR_photo}. Es veu una \emph{card} on a dins hi ha el codi QR
+generat per aquell vehicle. A sota d'aquest codi QR hi ha un botó, aquest botó serveix per generar un altre codi QR. Aquest botó
+s'utilitza quan el codi QR generat no és vàlid
+i es necessita crear-ne un altre per accedir dins del pàrquing.
+
+A sota hi ha dos botons, el botó d'\emph{Enrere} per anar a la pantalla d'inici, també es pot usar el \emph{logo}
+de la \emph{navbar} que redirigeix a la mateixa pàgina principal. A la dreta es pot veure un botó on diu \emph{Informació}
+que s'activa quan el codi QR ha estat validat pel servidor i es pot entrar al pàrquing. En aquesta es veu la informació de l'estacionament.
+Aquest botó, en principi no se'n fa ús, ja que el servidor envia un esdeveniment a l'aplicació a temps real i redirigeix
+a la pàgina d'informació. Es pot veure un exemple a \autoref{fig:information_photo}.
+Tot i això, aquest botó és útil per si hi ha algun problema que impedís l'enviament d'aquest esdeveniment.
+D'aquesta manera l'aplicació es pot continuar fent servir.
+
+\subsection{Informativa}
+Aquesta pantalla ens mostra la informació de quina plaça té associada el cotxe, el dia i hora que ha entrat al pàrquing,
+el preu en hora, la data actual i el preu en temps real. És una vista informativa. Quan es vol sortir del
+pàrquing s'ha de prémer el botó de sortir que hi ha al final de la \emph{card} on es redirigeix a la pantalla
+de pagament que es pot veure a \autoref{fig:payment_photo}. La següent imatge és un exemple del que pot mostrar aquesta pantalla
+informativa \autoref{fig:information_photo}.
+
+\subsection{Pagament}
+Un cop s'ha pres el botó de sortir de la pantalla anterior es redirigeix a una pantalla de \emph{stripe}
+per fer el pagament. Per simular un pagament amb èxit existeixen una llista de targetes
+per fer \emph{testing}. Aquesta llista es pot trobar a \autocite{list_cards}.
+Un exemple d'aquesta pantalla de pagament de \emph{Stripe} \autocite{stripe} està a \autoref{fig:payment_photo}.
+
+\subsubsection{Pagament validat}
+La pantalla de quan el pagament és validat consta d'un \emph{tick} de color verd
+per mostrar que tot ha funcionat correctament. Un codi QR generat per sortir del pàrquing amb
+un text explicatiu per saber que ha anat tot correctament i de quant temps es disposa
+per la validesa d'aquest codi QR. Si aquests minuts s'accedeixen, s'ha de tornar a pagar.
+Disposa d'un botó per anar a la pàgina principal, com també si es clica el \emph{logo} de la
+\emph{navbar}. La vista es pot veure a \autoref{fig:payment_success_photo}.
+
+\subsubsection{Pagament cence\l.lat}
+En aquest cas, el pagament ha estat cance\l.lat per l'usuari. La vista és
+una creu de color vermell que indica que hi ha hagut un error, a més una descripció posa que el pagament
+no s'ha efectuat. Hi ha un botó per anar a la pàgina principal, com també si es clica el \emph{logo} de la
+\emph{navbar}. La imatge d'aquesta vista es pot veure a \autoref{fig:payment_cancel_photo}
+
+\subsection{Panell administració}
+\label{sssec:index}
+En aquest panell d'administració només hi pot accedir els usuaris que són \emph{admin}.
+Els altres usuaris no hi poden accedir i a més tenen el botó deshabilitat.
+Com es pot observar en la imatge d'aquesta vista a \autoref{fig:admin_photo} hi ha
+dues \emph{cards}. La primera l'administrador pot modificar el preu en hores del
+pàrquing, s'ha de posar en cèntims i també pot modificar el temps de validesa dels
+codis QR. La segona hi ha una taula on es mostren tots els \emph{logs}, és a dir, totes
+les entrades, sortides i pagaments efectuats al pàrquing. A la columna de \emph{pagament}
+hi ha un enllaç cap a \emph{stripe} on hi ha la informació del pagament.
+En aquesta pantalla es pot fer accions com descarregar les factures, tramitar devolucions,
+veure detalls de la transacció i client \autocite{stripe}.
+La imatge es pot veure a \autoref{fig:stripe_info_photo}.
+
+\section{Eines utilitzades}
+
+En aquesta aplicació es fan servir diferents eines importants per fer un correcte funcionament.
+La primera de totes, és \emph{Axios}.
+Aquesta eina permet fer peticions HTTP passant-li en els \emph{Authoritzon Header} el \emph{Barear Token} de l'usuari.
+El fet aquest es pot configurar de manera automàtica si s'activa les \emph{withCredentials} d'axios o es pot passar manual.
+
+Algunes altres eines són:
+\begin{itemize}
+    \item classnames \autocite{classnames}: Una senzilla utilitat de JavaScript per unir condicionalment classNames.
+    \item dayjs \autocite{dayjs}: Una llibreria de JavaScript de dates.
+    \item pusher-js \autocite{pusher}: Els canals de Pusher són una solució als Web Sockets.
+    Eina útil per crear aplicacions interactives en temps real.
+    \item react-qr-codes \autocite{react_qr_code}: Un component de React per crear codis QR.
+    \item swr \autocite{swr}: stale-while-revalidate. Retornar les dades de la memòria, enviar una nova so\l.licitud
+    i revalidar les dades.
+\end{itemize}

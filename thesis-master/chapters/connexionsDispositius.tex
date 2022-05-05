@@ -1,0 +1,57 @@
+El projecte està compost per tres conjunts, el servidor de Laravel,
+l'aplicació amb què l'usuari interactua i la barrera.
+Pel desenvolupament d'aquest projecte s'ha organitzat de la manera que
+el servidor i l'aplicació estan a un ordinador i la barrera està en una Raspberry Pi.
+
+L'esquema que mostra com s'ha treballat durant el seu desenvolupament
+és el següent:
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[scale=0.28]{Fotos/connexióRasp-pc-mobile.png}
+    \end{center}
+    \caption{Connexions dels dispositius}
+    \label{fig:material}
+\end{figure}
+
+\begin{itemize}
+    \item El telèfon mòbil crea un punt d'accés personal.
+    \item La Raspberry Pi i l'ordinador estan connectats a través d'un cable
+    Ethernet.
+    \item La Raspberry Pi està connectada al punt d'accés personal del telèfon mòbil
+    i proporciona internet a l'ordinador.
+\end{itemize}
+
+Per poder aconseguir aquesta configuració a la barrera, concretament a la Raspberry Pi, se li ha assignat una
+adreça IP a \texttt{eth0}, la qual és 10.10.10.10.
+A l'ordinador, es configura l'adreça 10.10.10.1 amb l'encaminador 10.10.10.10.
+D'aquesta manera hi ha la possibilitat de connectar-se amb la Raspberry Pi
+via \texttt{ssh} fent \texttt{ssh pi@10.10.10.10} des d'un terminal de l'ordinador.
+D'aquesta manera es pot utilitzar la Raspberry Pi des del mateix ordinador
+sense la necessitat de connectar una pantalla externa i perifèrics com el ratolí
+i el teclat. Tot i que al principi s'accedia a la Raspberry Pi a través d'una pantalla
+per tal de configurar la càmera i fer les configuracions anteriors de l'esquema \autoref{fig:material}.
+
+Pel projecte es necessita que la barrera tingui connexió a internet, ja que
+fa peticions HTTP. També es vol que el servidor i l'aplicació tinguin internet,
+perquè si no no es poden fer ús dels esdeveniments de Web Sockets que utilitzen
+i altres eines o llibreries que se'n fa ús.
+
+La solució d'aquest problema que es planteja és
+configurar la Raspberry Pi de tal manera que l'ordinador tingui accés a internet a través d'ella, ja que és qui li proporciona internet des de la \emph{wlan0}.
+Per aconseguir aquest efecte es fa servir la comanda següent:
+\texttt{iptables -t nat -A POSTROUTING -s 10.10.10.0/24 -o wlan0 -j MASQUERADE}.
+Per fer això persistent i no posar la comanda cada vegada que es vol
+provar el funcionament del projecte cal modificar el fitxer d'\emph{/etc/iptables/rules.v4}
+posant la comanda següent a l'apartat de \emph{nat}:
+
+\texttt{-A POSTROUTING -s 10.10.10.0/24 -o wlan0 -j MASQUERADE}
+
+
+Aquesta comanda és afegir a la taula \texttt{nat} la regla \emph{POSTROUTING},
+aquesta regla consisteix a alterar o fer una determinada acció als paquets quan estan a punt de sortir
+on la font és l'adreça 10.10.10.0/24 i s'envien els paquets a través de
+la interfície \texttt{wlan0} cap a l'objectiu \emph{MASQUERADE}.
+Aquesta, s'utilitza per IP dinàmiques, la qual el telèfon mòbil equival a una d'elles.
+Per més informació d'aquesta comanda es pot trobar a \autocite{man_iptables}.
+A més, configurar un servidor DNS a l'ordinador, el DNS 8.8.8.8.

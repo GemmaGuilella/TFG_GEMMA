@@ -1,0 +1,90 @@
+/* Estils afegit per a les mètriques */
+
+
+
+/* Estils caixa sota textbox */
+#metriques{
+    padding: 7px 25px 14px 15px;
+    line-height:1;
+    margin:0;
+    display:none;
+    background-color: #f8f8f8;
+}
+#metriques p{
+    font-size:13px;
+    margin:0;
+    color:#777777;
+    font-weight: bold;
+}
+
+#resultatmetriques{
+    font-size:12px !important;
+    font-weight:normal !important;
+    color:black !important;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.metrica{
+    padding-right:1.5rem;
+    white-space: pre-wrap;
+}
+
+
+#significat{
+    
+    text-align: right;
+    color: #c43434;
+}
+#significat>a{
+    font-size: 8px;
+    
+}
+#msg-metriques{
+    font-size:12px !important;
+    font-weight:normal !important;
+    color:black !important;
+}
+
+
+/* Línia sepadadora caixa */
+#sep-stats{
+    margin:0;
+    margin-bottom: 10px;
+}
+
+/* Estils caixa lateral */
+#msg-metriques-lat{
+    font-weight:normal;
+    font-size:13px;
+}
+
+.metriques-col span{
+    
+    font-weight:normal;
+    font-size:13px;
+
+}
+.metriques-col{
+    
+    font-weight:bold;
+    font-size:13px;
+
+}
+
+#metriques-lat{  
+    
+   display:none; 
+}
+
+
+#metriques-lat>p>a{
+    font-size: 9px;
+    text-align: right;
+    color: #c43434;
+    margin-top:0.85rem;
+}
+
+#metriques-lat>p>a:hover{
+    text-decoration: underline;
+}

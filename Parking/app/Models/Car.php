@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Car extends Model
 {
@@ -21,6 +22,15 @@ class Car extends Model
         'matricula',
         'token',
         'token_created_at',
+    ];
+
+    /**
+     * Castable attributes
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'token_created_at' => 'datetime',
     ];
 
     /**
@@ -65,5 +75,13 @@ class Car extends Model
         return $query->whereHas('space', function (Builder $query) use ($value) {
             $query->where('car_id', $value ? '!=' : '=', null);
         });
+    }
+
+    /**
+     * Retorna els logs dels cotxes.
+     */
+    public function logs(): HasMany
+    {
+        return $this->hasMany(Log::class);
     }
 }

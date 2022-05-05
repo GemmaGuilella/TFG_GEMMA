@@ -24,8 +24,7 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'state' => ['required', 'boolean'],
-            'ip' => ['string'],
+            'qr' => ['required', 'string'],
         ];
     }
 }

@@ -15,11 +15,13 @@
         </include>
     </coverage>
     <php>
+        <server name="STRIPE_SECRET" value="sk_test_51KpbNrLdRDR3hGoSQBqsFkNRfOaG2j1PawxD6dQOqnI0Agh8KKkm535SnyyOK0ycyhYEBf4xoCLAwrAQZ6tUK5n000lRBgb3x6"/>
+        <server name="STRIPE_KEY" value="pk_test_51KpbNrLdRDR3hGoS02bG7Dc2AqYipOfLTLr6lmb3pcqjErMzUGnhwYFkjT6tl1fzwyeH1X2214daD50RShsvyMXt00itK8QoNu"/>
         <server name="APP_ENV" value="testing"/>
         <server name="BCRYPT_ROUNDS" value="4"/>
         <server name="CACHE_DRIVER" value="array"/>
-        <!-- <server name="DB_CONNECTION" value="sqlite"/> -->
-        <!-- <server name="DB_DATABASE" value=":memory:"/> -->
+        <server name="DB_CONNECTION" value="sqlite"/>
+        <server name="DB_DATABASE" value=":memory:"/>
         <server name="MAIL_MAILER" value="array"/>
         <server name="QUEUE_CONNECTION" value="sync"/>
         <server name="SESSION_DRIVER" value="array"/>

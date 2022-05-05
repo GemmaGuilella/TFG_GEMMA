@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use App\Models\Space;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Crypt;
 
 class CarResource extends JsonResource
 {
@@ -19,9 +20,8 @@ class CarResource extends JsonResource
             'id' => $this->id,
             'matricula' => $this->matricula,
             'is_parked' => $this->isParked(),
-            'space' => $this->space?->id,
-            'space_created_at' => $this->space?->created_at,
-            'spaces' => $this->when($this->space, new SpaceResource($this->space)),
+            'qr_token' => $this->when($this->token, Crypt::encryptString(json_encode(['id' => $this->id, 'token' => $this->token, 'token_created_at' => $this->token_created_at]))),
+            'space' => $this->when($this->space, new SpaceResource($this->space)),
         ];
     }
 }

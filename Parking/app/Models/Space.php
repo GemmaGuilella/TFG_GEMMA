@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
+use Ramsey\Uuid\Type\Integer;
+
+use function Symfony\Component\String\s;
 
 class Space extends Model
 {
@@ -48,5 +51,10 @@ class Space extends Model
     public function scopeAvailable(Builder $query, bool $value = true)
     {
         return $query->where('car_id', $value ? "=" : "!=", null);
+    }
+
+    public function minutesParked(): int
+    {
+        return now()->diffInMinutes($this->updated_at);
     }
 }

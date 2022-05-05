@@ -23,7 +23,11 @@ class GenerateQR extends Controller
      */
     public function __invoke(GenerateQRRequest $request, Car $car)
     {
+        if ($car->isParked()) {
+            return abort(403, "El cotxe està aparcat");
+        }
+
         $car->update(['token' => Str::random(16), 'token_created_at' => now()]);
-        return new GenerateQRResource($car);
+        return response()->noContent();
     }
 }

@@ -1,0 +1,37 @@
+Pel que fa a la realització d'aquest TFG, s'ha assolit el propòsit principal
+que és realitzar una aplicació (una \emph{demo}) per la gestió automatitzada d'un pàrquing
+inte\l.ligent amb el seu control d'entrades i sortides, amb la part de pagament i un panell administratiu.
+
+Per dur a terme aquest projecte s'ha trobat algunes dificultats, les quals són:
+
+Primer de tot, amb la part de \emph{back-end}:
+\begin{itemize}
+    \item Crear la composició del codi QR i buscar la forma de què aquests codis siguin vàlids.
+    \item Com ha d'actuar el servidor quan rep la lectura d'un codi QR i les accions que ha de
+    prendre respecte si és vàlid o no.
+    \item En el sistema de pagament, la dificultat és passar-li \emph{metadata} per
+    obtenir la informació de qui havia fet el pagament evitant passar les dades per l'URL. D'aquesta manera s'evita que
+    l'usuari pugui modificar-la.
+    \item Decidir com associar les places als usuaris, és a dir de donar la possibilitat a l'usuari a escollir la plaça
+    desitjada o que l'aplicació faci aquesta assignació.
+\end{itemize}
+
+Per l'apartat de \emph{front-end} la utilització dels \emph{hooks} que disposa la llibreria
+de \emph{React}. Aquests són el \emph{UseCallback}, \emph{useMemo}, \emph{useState} i el \emph{useContext}.
+L'explicació d'aquestes eines es poden trobar a \autocite{hooks_react}.
+
+Finalment, per l'apartat de la \emph{Raspberry Pi}:
+\begin{itemize}
+    \item Buscar eines o llibreries per obrir la càmera de la Raspberry pi.
+    \item Buscar llibreries per la detecció als codis QR i la lectura d'aquests.
+    \item Buscar una eina per fer peticions HTTP.
+    \item Realitzar una màquina d'estats més robusta i que contempli possibles casos d'error, com el d'invalidesa del codi QR.
+    \item Buscar components electrònics per tal de poder fer una simulació d'una barrera de pàrquing.
+\end{itemize}
+
+Finalment, treballar totes aquestes aplicacions conjuntament i poder fer una demostració de la seva funcionalitat
+ha comportat problemes, a causa de la necessitat de controlar la Raspberry Pi per \emph{ssh} i que tots dos conjunts obtinguessin internet.
+
+\section{Treball futur}
+\input{chapters/treballFutur.tex}
+

@@ -25,7 +25,7 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'matricula' => ['required', 'string', 'max:8', Rule::unique('cars')],
+            'matricula' => ['required', 'string', 'max:7', 'min:7', Rule::unique('cars')],
         ];
     }
 }

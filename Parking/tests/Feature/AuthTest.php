@@ -14,7 +14,8 @@ class AuthTest extends TestCase
     use RefreshDatabase;
     use WithFaker;
 
-    public function test_it_can_register_users()
+    /** @test */
+    public function it_can_register_users()
     {
         $response = $this->postJson(route('auth.register'), [
             'name' => $this->faker->name(),
@@ -31,7 +32,8 @@ class AuthTest extends TestCase
             ->assertJsonStructure(['token', 'user']);
     }
 
-    public function test_it_can_login_users()
+    /** @test */
+    public function it_can_login_users()
     {
         $user = User::factory()->create([
             'password' => $password = 'Password123!',
@@ -48,7 +50,8 @@ class AuthTest extends TestCase
             ->assertJsonStructure(['token', 'user']);
     }
 
-    public function test_it_can_get_users()
+    /** @test */
+    public function it_can_get_users()
     {
         $user = User::factory()->create();
 
@@ -65,7 +68,8 @@ class AuthTest extends TestCase
             ->assertJsonPath('data.dni', $user->dni);
     }
 
-    public function test_it_can_logout_users()
+    /** @test */
+    public function it_can_logout_users()
     {
         $user = User::factory()->create();
 
@@ -77,7 +81,9 @@ class AuthTest extends TestCase
 
         $response->assertNoContent();
     }
-    public function test_it_can_edit_users()
+
+    /** @test */
+    public function it_can_edit_users()
     {
         $user = User::factory()->create();
 

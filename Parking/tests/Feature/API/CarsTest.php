@@ -14,7 +14,8 @@ class CarsTest extends TestCase
     use RefreshDatabase;
     use WithFaker;
 
-    public function test_it_can_show_all_cars()
+    /** @test */
+    public function it_can_show_all_cars()
     {
         $user = User::factory()->create();
         Sanctum::actingAs($user);
@@ -22,7 +23,6 @@ class CarsTest extends TestCase
         Car::factory()->for($user)->count(2)->create();
 
         $response = $this->getJson(route('cars.index'));
-        // DD($response);
         $response
             ->assertOk()
             ->assertJsonCount(2, 'data')
@@ -36,11 +36,12 @@ class CarsTest extends TestCase
             ]);
     }
 
-    public function test_it_can_create_cars()
+    /** @test */
+    public function it_can_create_cars()
     {
         $matricula = (new \Faker\Factory())::create();
         $matricula->addProvider(new \Faker\Provider\Fakecar($matricula));
-        $matricula = $matricula->vehicleRegistration('[0-9]{4} [A-Z]{3}');
+        $matricula = $matricula->vehicleRegistration('[0-9]{4}[A-Z]{3}');
 
         $user = User::factory()->create();
         Sanctum::actingAs($user);
@@ -70,12 +71,12 @@ class CarsTest extends TestCase
         $response->assertJsonValidationErrors('matricula');
     }
 
-    public function test_it_fails_to_create_car_with_same_matricula()
+    /** @test */
+    public function it_fails_to_create_car_with_same_matricula()
     {
         $matricula = (new \Faker\Factory())::create();
         $matricula->addProvider(new \Faker\Provider\Fakecar($matricula));
-        $matricula = $matricula->vehicleRegistration('[0-9]{4} [A-Z]{3}');
-
+        $matricula = $matricula->vehicleRegistration('[0-9]{4}[A-Z]{3}');
         $user = User::factory()->create();
         Sanctum::actingAs($user);
         $response = $this->postJson(route('cars.store'), [
@@ -96,7 +97,8 @@ class CarsTest extends TestCase
             ]);
     }
 
-    public function test_it_can_show_cars()
+    /** @test */
+    public function it_can_show_cars()
     {
         $car = Car::factory()->create();
 
@@ -116,11 +118,13 @@ class CarsTest extends TestCase
             ]);
     }
 
-    public function test_it_can_update_cars()
+    /** @test */
+    public function it_can_update_cars()
     {
         $matricula = (new \Faker\Factory())::create();
         $matricula->addProvider(new \Faker\Provider\Fakecar($matricula));
-        $matricula = $matricula->vehicleRegistration('[0-9]{4} [A-Z]{3}');
+        $matricula = $matricula->vehicleRegistration('[0-9]{4}[A-Z]{3}');
+
         $car = Car::factory()->create([
             'matricula' => $matricula,
         ]);
@@ -142,7 +146,8 @@ class CarsTest extends TestCase
             ]);
     }
 
-    public function test_it_can_delete_cars()
+    /** @test */
+    public function it_can_delete_cars()
     {
         $car = Car::factory()->create();
 
