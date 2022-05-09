@@ -16,7 +16,7 @@ L'arquitectura del projecte consta en tres parts:
 \newpage
 \section{Back-end}
 
-L'arquitectura que utilitza la \emph{framework} de Laravel es basa en el MVC (Model-Vista-Controlador),
+L'arquitectura que fa servir la \emph{framework} de Laravel es basa en el MVC (Model-Vista-Controlador),
 feta servir per la implementació d'interfícies d'usuari, dades i la lògica.
 Aquesta separació ens dóna una millor divisió de treball i millora el manteniment.
 \begin{itemize}
@@ -36,11 +36,13 @@ Aquesta separació ens dóna una millor divisió de treball i millora el manteni
 
 \section{Front-end}
 
-El \emph{front-end} conjuntament amb la llibreria de React la qual crea components independents
-que cada un d'ells és una peça on l'usuari pot interactuar. S'encarrega de crear un espai personal
-per l'usuari. Generar els diferents codis QR per l'accés o la sortida del pàrquing.
+El \emph{front-end} s'encarrega de mostrar l'aplicació de manera visual a l'usuari.
+Està construïda amb Next.js (React), ja que permet la creació d'interfícies reactives
+de manera molt fàcil usant components. A l'aplicació, el \emph{front-end}
+genera els diferents codis QR per l'accés o la sortida del pàrquing.
 Mostrar la informació sobre l'aparcament. Fer pagaments d'una forma senzilla i amb seguretat.
-A més a més disposa d'un apartat per l'administració on hi ha una part de configuració i un recull de dades.
+A més a més disposa d'un apartat per l'administració on hi ha una part de configuració i
+un recull de dades.
 
 \section{Barrera}
 

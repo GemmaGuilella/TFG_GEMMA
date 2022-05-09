@@ -3,6 +3,7 @@
 namespace Tests\Feature\API;
 
 use App\Models\Car;
+use App\Models\Space;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -147,6 +148,26 @@ class CarsTest extends TestCase
     }
 
     /** @test */
+    public function it_fails_to_update_parked_cars()
+    {
+        $matricula = (new \Faker\Factory())::create();
+        $matricula->addProvider(new \Faker\Provider\Fakecar($matricula));
+        $matricula = $matricula->vehicleRegistration('[0-9]{4}[A-Z]{3}');
+
+        $car = Car::factory()->create([
+            'matricula' => $matricula,
+        ]);
+        Sanctum::actingAs($car->user);
+        Space::factory()->for($car)->create();
+        $response = $this->putJson(route('cars.update', $car), [
+            'matricula' => $matricula,
+        ]);
+
+        $response
+            ->assertForbidden();
+    }
+
+    /** @test */
     public function it_can_delete_cars()
     {
         $car = Car::factory()->create();
@@ -157,5 +178,17 @@ class CarsTest extends TestCase
         $response->assertNoContent();
 
         $this->assertModelMissing($car);
+    }
+
+    /** @test */
+    public function it_fails_to_delete_parkig_cars()
+    {
+        $car = Car::factory()->create();
+        Space::factory()->for($car)->create();
+
+        Sanctum::actingAs($car->user);
+        $response = $this->deleteJson(route('cars.destroy', $car));
+
+        $response->assertForbidden();
     }
 }

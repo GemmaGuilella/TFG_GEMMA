@@ -34,11 +34,15 @@ per tal de configurar la càmera i fer les configuracions anteriors de l'esquema
 
 Pel projecte es necessita que la barrera tingui connexió a internet, ja que
 fa peticions HTTP. També es vol que el servidor i l'aplicació tinguin internet,
-perquè si no no es poden fer ús dels esdeveniments de Web Sockets que utilitzen
+perquè si no no es poden fer ús dels esdeveniments de \texttt{WebSockets} que utilitzen
 i altres eines o llibreries que se'n fa ús.
 
 La solució d'aquest problema que es planteja és
-configurar la Raspberry Pi de tal manera que l'ordinador tingui accés a internet a través d'ella, ja que és qui li proporciona internet des de la \emph{wlan0}.
+configurar la Raspberry Pi de tal manera que l'ordinador tingui accés a internet a través d'ella,
+ja que és qui li proporciona internet des de la \emph{wlan0}.
+S'ha d'activar l'\texttt{ip forwarding} de la Raspberry Pi, d'aquesta manera ella pot actuar
+com a \textsl{router}.
+
 Per aconseguir aquest efecte es fa servir la comanda següent:
 \texttt{iptables -t nat -A POSTROUTING -s 10.10.10.0/24 -o wlan0 -j MASQUERADE}.
 Per fer això persistent i no posar la comanda cada vegada que es vol

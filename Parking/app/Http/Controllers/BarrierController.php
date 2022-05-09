@@ -15,9 +15,6 @@ use App\Models\Settings;
 
 class BarrierController extends Controller
 {
-    // Associar-lo a una plaça lliure quan la barrera es vol posar a
-    // oberta
-
     /**
      *
      *
@@ -26,7 +23,6 @@ class BarrierController extends Controller
      */
     public function open(UpdateRequest $request)
     {
-        // Desencriptar codi QR
         $qr = json_decode(Crypt::decryptString($request->qr));
 
         $car = Car::findOrFail($qr->id);
@@ -41,23 +37,15 @@ class BarrierController extends Controller
         }
 
         $car->update(['token' => null]);
-        // $space == null ? dd('No està a dins -> ENTRANT') : dd('Està a dins -> SORTINT');
-        // Mirem si la plaça és buida (null)
-        // si ho és, busquem la primera plaça que està null i li associem el cotxe
-        // return [$space === null ? "no a dins" : "a dins"];
+
         if (!$car->isParked()) {
             $space = Space::available()->first();
             if ($space === null) {
-                abort(409, 'No hi han places disponibles'); // conflice, no tenim places lliures!
+                abort(409, 'No hi han places disponibles');
             }
             $space->car()->associate($car);
             $space->save();
-            // 1ra: El QR hauria de tenir un token invalidable. Comprovo si aquest token està bé i l'invalido.
-            // Afegir columne de token a la BD de cars.
-            // El codi QR que hi hagi la ID i el token.
-            // Amb la id del cotxe tinc el token de la BD la comparo amb el token que m'ha arribat
-            // si es aixi obro barreres
-            // return ["Plaça adjudicada a:", $space->id]; // fer proves DELETE
+
             $pusher = new Pusher(env('PUSHER_APP_KEY'), env('PUSHER_APP_SECRET'), env('PUSHER_APP_ID'), ['cluster' => env('PUSHER_APP_CLUSTER')]);
             $pusher->trigger('my-channel', 'my-event', ['car_id' => $car->id, 'user_id' => $car->user->id]);
 
@@ -68,10 +56,8 @@ class BarrierController extends Controller
             ]);
 
             return response()->noContent();
-            // un no content es un 204 (ha anat be) per tant LED VERD (aixo python)
         }
-        // Si la plaça no és Null, voldrem sortir, per tant li posem com a Null
-        // Generar el codi qr per sortir si ha pagat
+
         $space = $car->space;
         $space->car()->disassociate($car);
         $space->save();
@@ -80,7 +66,7 @@ class BarrierController extends Controller
             'price' => null,
             'payment_id' => null,
         ]);
-        // return ["Sortint", $space];
+
         return response()->noContent();
     }
 }

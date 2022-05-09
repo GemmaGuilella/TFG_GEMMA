@@ -33,9 +33,7 @@ class PaymentController extends Controller
     {
         $attributes = $request->validated();
         $centims = Settings::first()->priceMinute() * $car->space->minutesParked();
-        // logger('url', [route('checkout.success', ['car' => $car, 'redirect' => $attributes['success_url']]) . '&session_id={CHECKOUT_SESSION_ID}']);
-        // Sempre cobrarem un minim de 1 centim al client.
-        // Sempre s'arrodonirà a l'alça
+
         return new PaymentResource([
             'url' => $request->user()->checkoutCharge($centims === 0 ? 1 : ceil($centims), 'Parking', 1, [
                 'success_url' => route('checkout.success', ['redirect' => $attributes['success_url']]) . '&session_id={CHECKOUT_SESSION_ID}',
@@ -65,7 +63,6 @@ class PaymentController extends Controller
             'payment_id' => $session->payment_intent,
         ]);
 
-        // Redirecionar a la app.
         return redirect($request->query('redirect'));
     }
 

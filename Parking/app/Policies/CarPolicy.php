@@ -53,7 +53,7 @@ class CarPolicy
      */
     public function update(User $user, Car $car)
     {
-        return $car->user()->is($user);
+        return $car->user()->is($user) && !$car->isParked();
     }
 
     /**
@@ -65,7 +65,7 @@ class CarPolicy
      */
     public function delete(User $user, Car $car)
     {
-        return $car->user()->is($user);
+        return $car->user()->is($user) && !$car->isParked();
     }
 
     /**

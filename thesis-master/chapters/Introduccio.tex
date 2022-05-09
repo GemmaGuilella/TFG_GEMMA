@@ -1,13 +1,12 @@
+Aquest projecte consisteix a dissenyar una aplicació per a la gestió automatitzada d'un pàrquing intel·ligent.
+Aquesta aplicació permet controlar l'accés al pàrquing a través de la lectura de codis QR en comptes d'alternatives
+més tradicionals com dispositius Bluetooth, sistemes de tiquets físics o lectors de matrícules.
 
-Aquest projecte consisteix en dissenyar una aplicació per a la gestió automatitzada d'un pàrquing inte\l.ligent.
-Aquest control es basa en l'entrada i sortida de vehicles d'aquest pàrquing fent servir altres alternatives
-al lector de matrícules convencional. A més a més, l'aplicació tindrà un registre de l'estança de cada usuari,
-com també la part de configuració pels treballadors.
+L'aplicació permet la creació d'usuaris i gestió dels seus vehicles. També s'ha integrat un sistema
+de pagaments per poder pagar des de l'aplicació abans de sortir del pàrquing. L'aplicació guarda registres
+d'entrades, sortides i pagaments.
 
-Algunes d'aquestes alternatives són la comunicació Bluetooth i els codis QR.
-En aquest projecte se centra a crear una aplicació on s'utilitza els codis QR.
-
-També, aquesta aplicació dóna l'eina perquè l'usuari faci els pagaments a través d'ella d'una manera segura.
+Finalment, també es permeten ajustar alguns paràmetres com el preu en hora del pàrquing.
 
 \section{Objectius}
 
@@ -15,21 +14,20 @@ L'objectiu es pot dividir en els punts següents:
 
 \begin{itemize}
     \item Buscar informació sobre els generadors i lectors dels codis QR, com també dels lectors de matrícules i la comunicació Bluetooth.
-    \item Aprendre a dissenyar un \emph{backend} i un \emph{frontend}.
-    \item Aprendre tots els passos que comporta la creació d'una aplicació i fer-los segons les necessitats del projecte.
-    \item Dissenyar un sistema on emmagatzemar les dades, una base de dades. Aprendre MySQL.
-    \item Dissenyar l'aplicació perquè l'usuari tingui un bon aprenentatge quan entri per a primer cop, aquesta tingui una eficiència excepcional i sobretot hi hagi seguretat.
-    \item Triar dues framework per al desenvolupament de l'aplicació, una per el \emph{backend} i l'altre per el \emph{frontend}.
-    \item Aprendre els passos de la framework de React, com també la del Laravel.
+    \item Aprendre a dissenyar un \emph{back-end} i un \emph{front-end} en una aplicació web.
+    \item Aprendre tots els passos que comporta la creació d'una aplicació web i fer-los segons les necessitats del projecte.
+    \item Dissenyar l'estructura d'una base de dades relacional on emmagatzemar les dades i aprendre MySQL.
+    \item Dissenyar l'aplicació perquè l'usuari tingui un bon aprenentatge quan entri per a primer cop, aquesta tingui una eficiència excepcional.
+    \item Triar dues \emph{framework} per al desenvolupament de l'aplicació, una pel \emph{back-end} i l'altre pel \emph{front-end}.
+    \item Aprendre a utilitzar les \emph{frameworks} de React, com també la del Laravel.
 \end{itemize}
 
 \section{Conceptes previs}
 
 \begin{itemize}
     \item El \emph{back-end} és la capa d'accés a les dades, és la lògica que fa que una pàgina web funcioni,
-    cosa que queda amagada als ulls de l'usuari. Determina que tan bé s'executarà l'aplicació i quina
-    experiència obtindrà l'usuari del seu ús, positiva o negativa.
-    Es fan servir habitualment llenguatges com PHP, Javascript, Python i Ruby, entre d'altres.
+    cosa que queda amagada als ulls de l'usuari. Es fan servir habitualment llenguatges com PHP, JavaScript,
+    Python i Ruby, entre d'altres.
     \item El \emph{front-end} és la part del desenvolupament que es dedica el disseny,
     des de l'estructura del lloc fins als estils com colors, fons, mides fins a arribar a les animacions i efectes.
     És aquesta part de la pàgina amb què interaccionen els usuaris, és tot el que el visitant veu i experimenta
@@ -40,8 +38,8 @@ L'objectiu es pot dividir en els punts següents:
     manera més àgil utilitzant les seves llibreries i funcionalitats. Ajuda als programadors a seguir una estructura,
     estalviar temps i esforços, ja que d'aquesta manera es centrin a buscar solucions a nous problemes i a <<No reinventar la roda>>.
     \item \emph{React} \autocite{react} és una llibreria de JavaScript per desenvolupar interfícies d'usuari.
-    \item \emph{Laravel} \autocite{laravel} és una framework del llenguatge de programació PHP.
-    S'utilitza per al desenvolupament d'aplicacions web.
+    \item \emph{Laravel} \autocite{laravel} és una \emph{framework} del llenguatge de programació PHP.
+    S'usa per al desenvolupament d'aplicacions web.
 \end{itemize}
 
 \newpage
@@ -49,14 +47,14 @@ L'objectiu es pot dividir en els punts següents:
 \label{sec:alternatives}
 
 En aquest apartat s'avaluen tres metodologies
-diferents per a poder control l'accés al pàrquing que són el lector de
+diferents per el control d'accés al pàrquing que són el lector de
 matrícules, la connexió Bluetooth i els codis QR.
 
 \subsection{Lectors de matrícules}
 \input{chapters/LectorsMatricula}
 
 \newpage
-\subsection{Comunicació amb Bluetooth}
+\subsection{Dispositius Bluetooth}
 \input{chapters/Bluetooth}
 
 \newpage
@@ -64,9 +62,8 @@ matrícules, la connexió Bluetooth i els codis QR.
 \input{chapters/IntroduccioQR}
 
 \section{Altres aplicacions}
-De les diferents alternatives que s'ha explicat en el capítol anterior \autoref{sec:alternatives}
-existeixen diferents aplicacions que hi ha al mercat que solucionen el problema real
-són les següents:
+Existeixen diferents aplicacions al mercat que ja solucionen el problema.
+Entre aquestes podem trobar les següents:
 
 \begin{enumerate}
     \item \texttt{telpark}: Una aplicació amb la possibilitat de reservar una plaça de pàrquing posar el pàrquing on es vol
@@ -74,10 +71,9 @@ són les següents:
     Possibilitat de pagar el parquímetre \autocite{telpark}.
     \item \texttt{Parkingdoor}: Aquesta aplicació és útil en garatges privats, quan es vol estalviar el comandament
     per pujar la porta del garatge. S'ha d'insta\l.lar un dispositiu junt la porta i el dispositiu mòbil que actua
-    com a comandament. Com s'ha explicat en l'apartat de \autoref{sssec:alternatives}.
-    Més informació a \autocite{parkingdoor}.
+    com a comandament. Com s'ha explicat en l'apartat de \autoref{sssec:alternatives} \autocite{parkingdoor}.
     \item \texttt{El Parking}: Aquesta aplicació dóna la possibilitat de fer pagaments a través de l'aplicació.
-    Fer reserves amb la possibilitat de cance\l.lació. Més informació a \autocite{el_parking}.
+    Fer reserves amb la possibilitat de cance\l.lació \autocite{el_parking}.
 \end{enumerate}
 
 Totes aquestes aplicacions tenen la característica de funcionar amb diferents pàrquings a la vegada.

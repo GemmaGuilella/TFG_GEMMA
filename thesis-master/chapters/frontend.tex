@@ -18,13 +18,11 @@ són la rapidesa, simplicitat i l'escalabilitat. Aquests objectius s'aconsegueix
     d'utilitzar-la perquè ajuda al desenvolupador, ja que té una sintaxi semblant a la de
     l'HTML, això implica que fa el codi més llegible i escriure'l és una experiència
     similar a l'HTML, el fa més fàcil.
-    \item Les propietats conegudes com les \emph{props}, són els atributs de configuració
-    d'un component.
+    \item Permet crear components reutilitzables.
 \end{itemize}
 
-
-Existeixen algunes \emph{frameworks} que utilitzen la llibreria de \emph{React}, com per exemple,
-\emph{NextJS} utilitza tot el que dóna la llibreria de \emph{React}. A més, dóna un sistema
+Existeixen algunes \emph{frameworks} que usen la llibreria de \emph{React}, com per exemple,
+\emph{NextJS} que fa servir tot el que dóna la llibreria de \emph{React}. A més, dóna un sistema
 de rutes amb la separació de codi per ruta. Permet en la utilització d'eines que ajuden al
 desenvolupador. Algunes d'elles utilitzades són:
 
@@ -34,14 +32,19 @@ desenvolupador. Algunes d'elles utilitzades són:
     seves dades.
 \end{itemize}
 
+El més a destacar és que permet la generació estàtica dels arxius, és a dir, precompila part
+del codi que no és dinàmic.
+
 \section{Pàgines}
 En els annexos s'hi pot trobar un recull de fotografies per mostrar com és la part de \emph{front-end}.
 Pel disseny de l'aplicació s'utilitza la \emph{framework} de CSS \texttt{Tailwind}. Usant
-aquesta eines permet al desenvolupador evitar escriure arxius CSS \autocite{tailwind}.
+aquesta eina permet al desenvolupador evitar escriure arxius CSS \autocite{tailwind}.
 
 \subsection{Iniciar Sessió}
-En aquesta vista permet a l'usuari iniciar sessió posant el seu correu electrònic i la contrasenya
-en els \emph{inputs} que es veuen a la imatge \autoref{fig:login_photo}. Seguidament, l'usuari ha de prémer el botó d'\texttt{Iniciar sessió}. Si l'usuari no està registrat en aquesta aplicació, ho pot fer prement el botó de \emph{Crear un nou compte} que està sota del primer botó.
+En aquesta vista permet a l'usuari obrir la sessió posant el seu correu electrònic i la contrasenya
+en els \emph{inputs} que es veuen a la imatge \autoref{fig:login_photo}. Seguidament, l'usuari ha
+de prémer el botó d'\texttt{Iniciar sessió}. Si l'usuari no està registrat en aquesta aplicació, ho
+ pot fer prement el botó de \emph{Crear un nou compte} que està sota del primer botó.
 
 \subsection{Registrar usuari}
 Aquesta vista mostra uns \emph{inputs} per incloure les dades de l'usuari per
@@ -155,17 +158,15 @@ La imatge es pot veure a \autoref{fig:stripe_info_photo}.
 \section{Eines utilitzades}
 
 En aquesta aplicació es fan servir diferents eines importants per fer un correcte funcionament.
-La primera de totes, és \emph{Axios}.
-Aquesta eina permet fer peticions HTTP passant-li en els \emph{Authoritzon Header} el \emph{Barear Token} de l'usuari.
-El fet aquest es pot configurar de manera automàtica si s'activa les \emph{withCredentials} d'axios o es pot passar manual.
+Aquestes eines són:
 
-Algunes altres eines són:
 \begin{itemize}
-    \item classnames \autocite{classnames}: Una senzilla utilitat de JavaScript per unir condicionalment classNames.
-    \item dayjs \autocite{dayjs}: Una llibreria de JavaScript de dates.
-    \item pusher-js \autocite{pusher}: Els canals de Pusher són una solució als Web Sockets.
+    \item \texttt{Axios} \autocite{axios}: Aquesta eina permet fer peticions HTTP passant-li en els \emph{Authoritzon Header} el \emph{Barear Token} de l'usuari.
+    El fet aquest es pot configurar de manera automàtica si s'activa les \emph{withCredentials} d'axios o es pot passar manual.
+    \item \texttt{classnames} \autocite{classnames}: Una senzilla utilitat de JavaScript per unir condicionalment classNames.
+    \item \texttt{dayjs} \autocite{dayjs}: Una llibreria de JavaScript de manipulació de dates.
+    \item \texttt{pusher-js} \autocite{pusher}: Els canals de Pusher són una solució als \emph{Web Sockets}.
     Eina útil per crear aplicacions interactives en temps real.
-    \item react-qr-codes \autocite{react_qr_code}: Un component de React per crear codis QR.
-    \item swr \autocite{swr}: stale-while-revalidate. Retornar les dades de la memòria, enviar una nova so\l.licitud
-    i revalidar les dades.
+    \item \texttt{react-qr-codes} \autocite{react_qr_code}: Un component de React per crear codis QR.
+    \item \texttt{swr} \autocite{swr}: Utilitat que permet evitar peticions HTTP innecessàries utilitzant una \emph{cache}.
 \end{itemize}
