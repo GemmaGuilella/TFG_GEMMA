@@ -1,0 +1,12 @@
+\beamer@sectionintoc {1}{Introducci^^c3^^b3}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Objectius}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Arquitectura del sistema}{5}{0}{1}
+\beamer@sectionintoc {2}{Back-end}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{BD}{7}{0}{2}
+\beamer@subsectionintoc {2}{2}{Rest API}{8}{0}{2}
+\beamer@sectionintoc {3}{Front-end}{14}{0}{3}
+\beamer@subsectionintoc {3}{1}{P^^c3^^a0gines}{15}{0}{3}
+\beamer@sectionintoc {4}{Raspberry Pi}{28}{0}{4}
+\beamer@subsectionintoc {4}{1}{Barrera}{29}{0}{4}
+\beamer@sectionintoc {5}{Conclusions}{30}{0}{5}
+\beamer@subsectionintoc {5}{1}{Treball Futur}{31}{0}{5}

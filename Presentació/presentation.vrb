@@ -1,0 +1,10 @@
+\frametitle{\thesection .\thesubsection \hphantom { } \secname : \subsecname }
+\begin{enumerate}
+        \item Pujar / baixar la barrera.
+        \item Escollir/canviar la pla^^c3^^a7a del p^^c3^^a0rquing.
+        \item Fer reserves de places a trav^^c3^^a9s de l'aplicaci^^c3^^b3.
+        \item Historial d'aparcaments.
+        \item Descarregar-se la factura.
+        \item Enviar correus adjuntant la factura de cada pagament.
+    \end{enumerate}
+\beamerclosesubstitutedenvironement {slide}
