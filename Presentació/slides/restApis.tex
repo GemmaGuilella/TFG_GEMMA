@@ -1,82 +1,91 @@
 \begin{slide}
-    \begin{table}[H]
-    \centering
-    \begin{tabular}{llll}
-        \hline
-        \textbf{Mètode} & \textbf{Ruta} & \textbf{Middelware} & \textbf{Descripció} \\ \hline
-        POST            & /auth/login     & guest &  Iniciar sessió     \\ \hline
-        POST            & /auth/logout    & guest &  Tancar sessió     \\ \hline
-        POST            & /auth/register  & auth  &  Crear usuari    \\ \hline
-        GET             & /auth/user      & auth  &  Obtenir usuari    \\ \hline
-        PUT             & /auth/user      & auth  &  Modificar usuari  \\ \hline
-        \end{tabular}
-    \caption{Taula rest API \emph{Auth}}
-    \end{table}
+    \begin{itemize}
+        \item Autentificació
+        \item Cotxes
+        \item QR
+        \item Barrera
+        \item Pagaments
+        \item Settings
+    \end{itemize}
 \end{slide}
 
-\begin{slide}
-    \begin{table}[H]
-    \centering
-    \begin{tabular}{llll}
-    \hline
-    \textbf{Mètode} & \textbf{Ruta} & \textbf{Middelware} & \textbf{Descripció} \\ \hline
-        GET             & /cars       & auth &  Mostrar tots els cotxes     \\ \hline
-        POST            & /cars        & auth & Crear un cotxe     \\ \hline
-        GET             & /cars/\{car\}  & auth & Mostrar el cotxe     \\ \hline
-        PUT             & /cars/\{car\}  & auth & Modificar el cotxe     \\ \hline
-        DELETE          & /cars/\{car\}  & auth & Eliminar el cotxe     \\ \hline
-        \end{tabular}
-    \caption{Taula rest API \emph{Cars}}
-    \end{table}
-\end{slide}
+% \begin{slide}
+%     \begin{table}[H]
+%     \centering
+%     \begin{tabular}{llll}
+%         \hline
+%         \textbf{Mètode} & \textbf{Ruta} & \textbf{Middelware} & \textbf{Descripció} \\ \hline
+%         POST            & /auth/login     & guest &  Iniciar sessió     \\ \hline
+%         POST            & /auth/logout    & guest &  Tancar sessió     \\ \hline
+%         POST            & /auth/register  & auth  &  Crear usuari    \\ \hline
+%         GET             & /auth/user      & auth  &  Obtenir usuari    \\ \hline
+%         PUT             & /auth/user      & auth  &  Modificar usuari  \\ \hline
+%         \end{tabular}
+%     \caption{Taula rest API \emph{Auth}}
+%     \end{table}
+% \end{slide}
 
-\begin{slide}
-    \begin{table}[H]
-        \centering
-        \begin{tabular}{llll}
-        \hline
-        \textbf{Mètode} & \textbf{Ruta} & \textbf{Middelware} & \textbf{Descripció} \\ \hline
-        GET             & /cars/\{car\}/qr   &  auth  & Generar QR  \\ \hline
-        \end{tabular}
-        \caption{Taula rest API \emph{QR}}
-    \end{table}
-\end{slide}
+% \begin{slide}
+%     \begin{table}[H]
+%     \centering
+%     \begin{tabular}{llll}
+%     \hline
+%     \textbf{Mètode} & \textbf{Ruta} & \textbf{Middelware} & \textbf{Descripció} \\ \hline
+%         GET             & /cars       & auth &  Mostrar tots els cotxes     \\ \hline
+%         POST            & /cars        & auth & Crear un cotxe     \\ \hline
+%         GET             & /cars/\{car\}  & auth & Mostrar el cotxe     \\ \hline
+%         PUT             & /cars/\{car\}  & auth & Modificar el cotxe     \\ \hline
+%         DELETE          & /cars/\{car\}  & auth & Eliminar el cotxe     \\ \hline
+%         \end{tabular}
+%     \caption{Taula rest API \emph{Cars}}
+%     \end{table}
+% \end{slide}
 
-\begin{slide}
-    \begin{table}[H]
-        \centering
-        \begin{tabular}{lll}
-            \hline
-            \textbf{Mètode} & \textbf{Ruta} & \textbf{Descripció} \\ \hline
-            POST            & /barriers/open &  Pujar barrera     \\ \hline
-        \end{tabular}
-        \caption{Taula rest API \emph{Barriers}}
-    \end{table}
-\end{slide}
+% \begin{slide}
+%     \begin{table}[H]
+%         \centering
+%         \begin{tabular}{llll}
+%         \hline
+%         \textbf{Mètode} & \textbf{Ruta} & \textbf{Middelware} & \textbf{Descripció} \\ \hline
+%         GET             & /cars/\{car\}/qr   &  auth  & Generar QR  \\ \hline
+%         \end{tabular}
+%         \caption{Taula rest API \emph{QR}}
+%     \end{table}
 
-\begin{slide}
-    \begin{table}[H]
-        \centering
-        \begin{tabular}{llll}
-            \hline
-            \textbf{Mètode} & \textbf{Ruta} & \textbf{Middelware} &\textbf{Descripció} \\ \hline
-            POST            & /checkout/\{car\}         & auth                & \begin{tabular}[c]{@{}l@{}}Generar \\ pagament\end{tabular}     \\ \hline
-            GET             & /checkout/\{car\}/error   & -                   & \begin{tabular}[c]{@{}l@{}}Pagament \\ cancel·lat\end{tabular} \\ \hline
-            GET             & /checkout/\{car\}/success & -                   & \begin{tabular}[c]{@{}l@{}}Pagament \\ acceptat\end{tabular}    \\ \hline
-        \end{tabular}
-        \caption{Taula rest API \emph{Payments}}
-    \end{table}
-\end{slide}
+%     \begin{table}[H]
+%         \centering
+%         \begin{tabular}{lll}
+%             \hline
+%             \textbf{Mètode} & \textbf{Ruta} & \textbf{Descripció} \\ \hline
+%             POST            & /barriers/open &  Pujar barrera     \\ \hline
+%         \end{tabular}
+%         \caption{Taula rest API \emph{Barriers}}
+%     \end{table}
+% \end{slide}
 
-\begin{slide}
-    \begin{table}[H]
-        \centering
-        \begin{tabular}{llll}
-            \hline
-            \textbf{Mètode} & \textbf{Ruta} & \textbf{Middelware} & \textbf{Descripció} \\ \hline
-            GET             & /settings   & auth & Obtenir settings   \\ \hline
-            PUT             & /settings   & auth \& admin & Modificar settings    \\ \hline
-        \end{tabular}
-        \caption{Taula rest API \emph{Settings}}
-    \end{table}
-\end{slide}
+% \begin{slide}
+%     \begin{table}[H]
+%         \centering
+%         \begin{tabular}{llll}
+%             \hline
+%             \textbf{Mètode} & \textbf{Ruta} & \textbf{Middelware} &\textbf{Descripció} \\ \hline
+%             POST            & /checkout/\{car\}         & auth                & \begin{tabular}[c]{@{}l@{}}Generar \\ pagament\end{tabular}     \\ \hline
+%             GET             & /checkout/error   & -                   & \begin{tabular}[c]{@{}l@{}}Pagament \\ cancel·lat\end{tabular} \\ \hline
+%             GET             & /checkout/success & -                   & \begin{tabular}[c]{@{}l@{}}Pagament \\ acceptat\end{tabular}    \\ \hline
+%         \end{tabular}
+%         \caption{Taula rest API \emph{Payments}}
+%     \end{table}
+% \end{slide}
+
+% \begin{slide}
+%     \begin{table}[H]
+%         \centering
+%         \begin{tabular}{llll}
+%             \hline
+%             \textbf{Mètode} & \textbf{Ruta} & \textbf{Middelware} & \textbf{Descripció} \\ \hline
+%             GET             & /settings   & auth & Obtenir settings   \\ \hline
+%             PUT             & /settings   & auth \& admin & Modificar settings    \\ \hline
+%         \end{tabular}
+%         \caption{Taula rest API \emph{Settings}}
+%     \end{table}
+% \end{slide}

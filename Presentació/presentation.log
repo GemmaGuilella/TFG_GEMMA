@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.23)  9 MAY 2022 21:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.23)  12 MAY 2022 17:18
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1510,13 +1510,20 @@ thkerncmss.
 \openout4 = `presentation.vrb'.
 
 
-(presentation.vrb) [4
+(presentation.vrb
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
+3.
+
+(/Users/gemmarosellguilella/Library/Application Support/MiKTeX/texmfs/install/t
+ex/latex/base/ts1cmss.fd
+File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)) [4
 
 ]) (slides/arq.tex
 \openout4 = `presentation.vrb'.
 
  (presentation.vrb
-<images//arquitectura_sistema.png, id=95, 525.965pt x 502.87875pt>
+<images//arquitectura_sistema.png, id=99, 525.965pt x 502.87875pt>
 File: images//arquitectura_sistema.png Graphic file (type png)
 <use images//arquitectura_sistema.png>
 Package pdftex.def Info: images//arquitectura_sistema.png  used on input line 4
@@ -1534,13 +1541,13 @@ Overfull \vbox (5.70107pt too high) detected at line 6
 \openout4 = `presentation.vrb'.
 
  (presentation.vrb
-<images//BD.png, id=108, 490.83376pt x 680.5425pt>
+<images//BD.png, id=112, 490.83376pt x 680.5425pt>
 File: images//BD.png Graphic file (type png)
 <use images//BD.png>
 Package pdftex.def Info: images//BD.png  used on input line 4.
-(pdftex.def)             Requested size: 150.33693pt x 208.44698pt.
+(pdftex.def)             Requested size: 168.02716pt x 232.96773pt.
 )
-Overfull \vbox (5.70107pt too high) detected at line 6
+Overfull \vbox (30.22182pt too high) detected at line 6
  []
 
 [7
@@ -1550,228 +1557,16 @@ Overfull \vbox (5.70107pt too high) detected at line 6
 
  (presentation.vrb) [8
 
-]
-\openout4 = `presentation.vrb'.
-
-
-(presentation.vrb
-LaTeX Font Info:    Trying to load font information for OMS+cmss on input line 
-9.
-LaTeX Font Info:    No file OMScmss.fd. on input line 9.
-
-
-LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 9.
-
-) [9
+]) [9
 
 ]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb) [10
-
-]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb) [11
-
-]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-8.
-
-(/Users/gemmarosellguilella/Library/Application Support/MiKTeX/texmfs/install/t
-ex/latex/base/ts1cmss.fd
-File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-Overfull \hbox (2.6075pt too wide) in paragraph at lines 4--11
- [] 
- []
-
-) [12
-
-]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb) [13
-
-]) [14
-
-] (slides/front.tex
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb
-<images//pantalla0_login.png, id=155, 390.45876pt x 832.10875pt>
-File: images//pantalla0_login.png Graphic file (type png)
-<use images//pantalla0_login.png>
-Package pdftex.def Info: images//pantalla0_login.png  used on input line 4.
-(pdftex.def)             Requested size: 69.04028pt x 147.13948pt.
-)
-[15
-
- <./images//pantalla0_login.png>]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb
-<images//pantalla1_registre.png, id=162, 380.42125pt x 824.07875pt>
-File: images//pantalla1_registre.png Graphic file (type png)
-<use images//pantalla1_registre.png>
-Package pdftex.def Info: images//pantalla1_registre.png  used on input line 4.
-(pdftex.def)             Requested size: 67.9214pt x 147.13948pt.
-) [16
-
- <./images//pantalla1_registre.png>]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb
-<images//pantalla2_index.png, id=169, 386.44376pt x 831.105pt>
-File: images//pantalla2_index.png Graphic file (type png)
-<use images//pantalla2_index.png>
-Package pdftex.def Info: images//pantalla2_index.png  used on input line 4.
-(pdftex.def)             Requested size: 68.41292pt x 147.13948pt.
-) [17
-
- <./images//pantalla2_index.png>]
-\openout4 = `presentation.vrb'.
-
-
-(presentation.vrb
-<images//pantalla9_edit_user.png, id=176, 393.47pt x 841.1425pt>
-File: images//pantalla9_edit_user.png Graphic file (type png)
-<use images//pantalla9_edit_user.png>
-Package pdftex.def Info: images//pantalla9_edit_user.png  used on input line 4.
-
-(pdftex.def)             Requested size: 68.82825pt x 147.13948pt.
-) [18
-
- <./images//pantalla9_edit_user.png>]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb
-<images//pantalla10_edit_car.png, id=183, 398.48875pt x 850.17625pt>
-File: images//pantalla10_edit_car.png Graphic file (type png)
-<use images//pantalla10_edit_car.png>
-Package pdftex.def Info: images//pantalla10_edit_car.png  used on input line 4.
-
-(pdftex.def)             Requested size: 68.96436pt x 147.13948pt.
-)
-[19
-
- <./images//pantalla10_edit_car.png>]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb
-<images//pantalla11_add_car.png, id=191, 406.51875pt x 843.15pt>
-File: images//pantalla11_add_car.png Graphic file (type png)
-<use images//pantalla11_add_car.png>
-Package pdftex.def Info: images//pantalla11_add_car.png  used on input line 4.
-(pdftex.def)             Requested size: 70.93713pt x 147.13948pt.
-) [20
-
- <./images//pantalla11_add_car.png>]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb
-<images//pantalla3_codiQR.png, id=198, 393.47pt x 843.15pt>
-File: images//pantalla3_codiQR.png Graphic file (type png)
-<use images//pantalla3_codiQR.png>
-Package pdftex.def Info: images//pantalla3_codiQR.png  used on input line 4.
-(pdftex.def)             Requested size: 68.66014pt x 147.13948pt.
-) [21
-
- <./images//pantalla3_codiQR.png>]
-\openout4 = `presentation.vrb'.
-
-
-(presentation.vrb
-<images//pantalla4_informacio.png, id=205, 398.48875pt x 839.135pt>
-File: images//pantalla4_informacio.png Graphic file (type png)
-<use images//pantalla4_informacio.png>
-Package pdftex.def Info: images//pantalla4_informacio.png  used on input line 4
-.
-(pdftex.def)             Requested size: 69.87035pt x 147.13948pt.
-) [22
-
- <./images//pantalla4_informacio.png>]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb
-<images//pantalla5_pagament.png, id=212, 402.50375pt x 839.135pt>
-File: images//pantalla5_pagament.png Graphic file (type png)
-<use images//pantalla5_pagament.png>
-Package pdftex.def Info: images//pantalla5_pagament.png  used on input line 4.
-(pdftex.def)             Requested size: 70.57433pt x 147.13948pt.
-) [23
-
- <./images//pantalla5_pagament.png>]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb
-<images//pantalla7_pagament_success.png, id=219, 396.48125pt x 838.13126pt>
-File: images//pantalla7_pagament_success.png Graphic file (type png)
-<use images//pantalla7_pagament_success.png>
-Package pdftex.def Info: images//pantalla7_pagament_success.png  used on input 
-line 4.
-(pdftex.def)             Requested size: 69.60304pt x 147.13948pt.
-) [24
-
- <./images//pantalla7_pagament_success.png>]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb
-<images//pantalla6_pagamanet_cancel.png, id=226, 391.4625pt x 834.11626pt>
-File: images//pantalla6_pagamanet_cancel.png Graphic file (type png)
-<use images//pantalla6_pagamanet_cancel.png>
-Package pdftex.def Info: images//pantalla6_pagamanet_cancel.png  used on input 
-line 4.
-(pdftex.def)             Requested size: 69.05052pt x 147.13948pt.
-) [25
-
- <./images//pantalla6_pagamanet_cancel.png>]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb
-<images//pantalla12_admin.png, id=235, 1685.29625pt x 917.4275pt>
-File: images//pantalla12_admin.png Graphic file (type png)
-<use images//pantalla12_admin.png>
-Package pdftex.def Info: images//pantalla12_admin.png  used on input line 4.
-(pdftex.def)             Requested size: 315.32367pt x 171.66023pt.
-
-Overfull \hbox (8.0338pt too wide) in paragraph at lines 4--5
- [] 
- []
-
-)
-Overfull \vbox (18.35416pt too high) detected at line 87
- []
-
-[26
-
- <./images//pantalla12_admin.png>]
-\openout4 = `presentation.vrb'.
-
- (presentation.vrb
-<images//pantalla13_stripe.png, id=242, 1349.04pt x 910.40125pt>
-File: images//pantalla13_stripe.png Graphic file (type png)
-<use images//pantalla13_stripe.png>
-Package pdftex.def Info: images//pantalla13_stripe.png  used on input line 4.
-(pdftex.def)             Requested size: 254.36472pt x 171.66023pt.
-)
-Overfull \vbox (2.71423pt too high) detected at line 94
- []
-
-[27
-
- <./images//pantalla13_stripe.png>]) [28
+[10
 
 ] (slides/rasp.tex
 \openout4 = `presentation.vrb'.
 
  (presentation.vrb
-<images//Barrera.png, id=254, 2283.53125pt x 1773.62625pt>
+<images//Barrera.png, id=137, 2283.53125pt x 1773.62625pt>
 File: images//Barrera.png Graphic file (type png)
 <use images//Barrera.png>
 Package pdftex.def Info: images//Barrera.png  used on input line 4.
@@ -1780,15 +1575,17 @@ Package pdftex.def Info: images//Barrera.png  used on input line 4.
 Overfull \vbox (5.70107pt too high) detected at line 6
  []
 
-[29
+[11
 
- <./images//Barrera.png>]) [30
+ <./images//Barrera.png>]) [12
+
+] [13
 
 ] (slides/treballFutur.tex
 \openout4 = `presentation.vrb'.
 
- (presentation.vrb)
-[31
+
+(presentation.vrb) [14
 
 ])
 \tf@nav=\write8
@@ -1802,35 +1599,47 @@ Overfull \vbox (5.70107pt too high) detected at line 6
 
  (presentation.aux)
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+Package rerunfilecheck Warning: File `presentation.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
-Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 54C5936C6B15A2D2E5F703B29C048157;1246.
+Package rerunfilecheck Info: Checksums for `presentation.out':
+(rerunfilecheck)             Before: 86198AB33974A991E328AB9AB0459DB5;1317
+(rerunfilecheck)             After:  90B9938F0BD7F9B193F4A433014F1B34;1317.
  ) 
 Here is how much of TeX's memory you used:
- 34666 strings out of 478583
- 761756 string characters out of 2829284
- 1016778 words of memory out of 3000000
- 52007 multiletter control sequences out of 15000+600000
- 478839 words of font info for 61 fonts, out of 8000000 for 9000
+ 34385 strings out of 478583
+ 754107 string characters out of 2829284
+ 1014775 words of memory out of 3000000
+ 51799 multiletter control sequences out of 15000+600000
+ 477910 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  133i,13n,125p,1862b,814s stack positions out of 10000i,1000n,20000p,200000b,80000s
- </Users/gemmarosellguilella/Library/Application Support/MiKTeX/texmfs/data/f
-onts/pk/ljfour/jknappen/ec/dpi600/tcss1000.pk> </Users/gemmarosellguilella/Libr
-ary/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/t
-css1095.pk></Users/gemmarosellguilella/Library/Application Support/MiKTeX/texmf
-s/install/fonts/type1/public/amsfonts/cm/cmss10.pfb></Users/gemmarosellguilella
-/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/
-cm/cmss12.pfb></Users/gemmarosellguilella/Library/Application Support/MiKTeX/te
-xmfs/install/fonts/type1/public/amsfonts/cm/cmss8.pfb></Users/gemmarosellguilel
-la/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfont
-s/cm/cmssbx10.pfb></Users/gemmarosellguilella/Library/Application Support/MiKTe
-X/texmfs/install/fonts/type1/public/amsfonts/cm/cmssi10.pfb></Users/gemmarosell
-guilella/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb>
-Output written on presentation.pdf (31 pages, 3771007 bytes).
+
+pdfTeX warning (dest): name{Outline0.6.1.15} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Outline0.4.1.12} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Outline0.2.2.9} has been referenced but does not ex
+ist, replaced by a fixed one
+
+ </Users/gemmarosellguilella/Library/Application Support/MiKTeX/texmfs/data/fon
+ts/pk/ljfour/jknappen/ec/dpi600/tcss1095.pk></Users/gemmarosellguilella/Library
+/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmss1
+0.pfb></Users/gemmarosellguilella/Library/Application Support/MiKTeX/texmfs/ins
+tall/fonts/type1/public/amsfonts/cm/cmss12.pfb></Users/gemmarosellguilella/Libr
+ary/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cm
+ss8.pfb></Users/gemmarosellguilella/Library/Application Support/MiKTeX/texmfs/i
+nstall/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></Users/gemmarosellguilella/
+Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/c
+m/cmssi10.pfb>
+Output written on presentation.pdf (14 pages, 582607 bytes).
 PDF statistics:
- 325 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
- 219 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 200 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 500000)
+ 154 words of extra memory for PDF output out of 10000 (max. 10000000)
 

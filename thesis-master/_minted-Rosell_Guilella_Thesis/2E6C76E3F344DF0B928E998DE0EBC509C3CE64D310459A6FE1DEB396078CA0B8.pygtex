@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZdq{}price\PYGZus{}hour\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+m+mi}{260}\PYG{p}{,}
+\PYG{+w}{    }\PYG{n+nt}{\PYGZdq{}token\PYGZus{}expiration\PYGZdq{}}\PYG{p}{:}\PYG{+w}{ }\PYG{l+m+mi}{5}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
